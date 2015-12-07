@@ -17,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oP1-8n-Fz7">
-                                <rect key="frame" x="135" y="89" width="105" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z00-IV-LWT">
+                                <rect key="frame" x="135" y="163" width="105" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.73333335713333336" green="0.73333335713333336" blue="0.73333335713333336" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Save Location">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Last Location">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l13-uO-Cbp">
-                                <rect key="frame" x="135" y="251" width="105" height="30"/>
+                                <rect key="frame" x="135" y="252" width="105" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.73333335713333336" green="0.73333335713333336" blue="0.73333335713333336" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="My Locations">
@@ -35,12 +35,12 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z00-IV-LWT">
-                                <rect key="frame" x="135" y="163" width="105" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oP1-8n-Fz7">
+                                <rect key="frame" x="135" y="90" width="105" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.73333335713333336" green="0.73333335713333336" blue="0.73333335713333336" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Last Location">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Save Location">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
