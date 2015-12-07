@@ -48,7 +48,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="hP2-0N-ZE2" kind="show" id="VZ1-uE-6tp"/>
+                                    <segue destination="D0r-7a-fWe" kind="show" id="VZ1-uE-6tp"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SAVESPOT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOh-EC-yro">
@@ -88,7 +88,7 @@
         <!--Last Location-->
         <scene sceneID="iUA-Bb-c6R">
             <objects>
-                <viewController title="Last Location" id="hP2-0N-ZE2" sceneMemberID="viewController">
+                <viewController title="Last Location" id="hP2-0N-ZE2" customClass="LastLocationVC" customModule="SaveSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fad-KX-yJc"/>
                         <viewControllerLayoutGuide type="bottom" id="3b4-Yw-FWX"/>
@@ -96,14 +96,26 @@
                     <view key="view" contentMode="scaleToFill" id="NFS-w6-xfr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7pS-KC-y2I">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <animations/>
+                            </mapView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8i2-dh-79V">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="tA4-ud-dZf"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="7pS-KC-y2I" id="5Ks-pA-WuL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6V-8l-mbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111.5" y="394.5"/>
+            <point key="canvasLocation" x="1698.5" y="394.5"/>
         </scene>
         <!--Save Screen-->
         <scene sceneID="zew-O2-shg">
@@ -125,7 +137,7 @@
                                     <action selector="recalculatePressed:" destination="d69-wz-zzE" eventType="touchUpInside" id="jom-c5-yua"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="txS-IW-ogY">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="txS-IW-ogY">
                                 <rect key="frame" x="0.0" y="64" width="375" height="491"/>
                                 <animations/>
                             </mapView>
@@ -233,6 +245,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MUa-yw-aLO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="978.5" y="-426.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4jE-Jt-Koc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D0r-7a-fWe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cTQ-Xv-74a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hP2-0N-ZE2" kind="relationship" relationship="rootViewController" id="A7c-Hu-ZpN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqO-yH-RWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111.5" y="394.5"/>
         </scene>
     </scenes>
 </document>

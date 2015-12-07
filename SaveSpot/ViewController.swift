@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreLocation
+var lastSpot : Spot?
 
 class ViewController: UIViewController {
     

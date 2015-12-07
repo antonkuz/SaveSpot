@@ -11,12 +11,13 @@ import MapKit
 import CoreLocation
 
 class SaveScreenVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    var lastLocation : CLLocation?
     
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
     @IBAction func savePressed(sender: AnyObject) {
-        let alert = UIAlertController(title: "Enter additional info", message: "name/floor", preferredStyle: .Alert)
+        let alert = UIAlertController(title: "Enter name", message: "", preferredStyle: .Alert)
         
         alert.addTextFieldWithConfigurationHandler{
             (textField) -> Void in
@@ -26,8 +27,8 @@ class SaveScreenVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelega
             (action) -> Void in
             
             let textf = alert.textFields![0] as UITextField
-            print(textf.text)
-            
+            lastSpot = Spot(name: textf.text!, location: self.lastLocation!)
+            self.dismissViewControllerAnimated(true, completion:nil)
         }))
 
         presentViewController(alert, animated: true, completion: nil)
@@ -71,7 +72,7 @@ class SaveScreenVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelega
         mapView.setRegion(region, animated: true)
         
         addressLabel.text = "\(location!.coordinate.latitude) , \(location!.coordinate.longitude) "
-        
+        self.lastLocation = location
         locationMgr.stopUpdatingLocation()
     }
 }
