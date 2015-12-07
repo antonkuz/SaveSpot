@@ -7,25 +7,17 @@
 //
 
 import UIKit
-import MapKit
-import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-
-    let locationMgr = CLLocationManager()
+class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationMgr.delegate = self
-        locationMgr.requestWhenInUseAuthorization()
-        locationMgr.startUpdatingLocation()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg.jpg")!)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
