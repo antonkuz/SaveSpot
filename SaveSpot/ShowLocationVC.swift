@@ -29,7 +29,6 @@ class ShowLocationVC: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         let draw = MKPolylineRenderer(overlay: overlay)
         draw.strokeColor = UIColor.purpleColor()
         draw.lineWidth = 3.0
-        print("WASSSSUSUUUP")
         return draw
     }
     
@@ -49,9 +48,11 @@ class ShowLocationVC: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     func loadTheLocation(){
         var spot = lastSpot
+        var showDirections = true
         if let oldSpot = historySpot {
             //historyspot was passed
             spot = oldSpot
+            showDirections = false
         }
         let location = spot!.location
         let center = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
@@ -75,6 +76,9 @@ class ShowLocationVC: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         request.destination = destination
         request.requestsAlternateRoutes = false
         
+        if !showDirections{
+            return
+        }
         let directions = MKDirections(request: request)
         directions.calculateDirectionsWithCompletionHandler{
             response, error in
@@ -86,10 +90,8 @@ class ShowLocationVC: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             self.mapView.removeOverlays(overlays)
             
             for route in response.routes {
-                
                 self.mapView.addOverlay(route.polyline,
                     level: MKOverlayLevel.AboveRoads)
-                
                 for next  in route.steps {
                     print(next.instructions)
                 }
