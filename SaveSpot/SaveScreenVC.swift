@@ -28,6 +28,7 @@ class SaveScreenVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelega
             
             let textf = alert.textFields![0] as UITextField
             lastSpot = Spot(name: textf.text!, location: self.lastLocation!)
+            spotList.append(lastSpot!)
             self.dismissViewControllerAnimated(true, completion:nil)
         }))
 
@@ -60,19 +61,52 @@ class SaveScreenVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelega
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
         let center = CLLocationCoordinate2DMake(location!.coordinate.latitude, location!.coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: center, span: span)
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = center
-        annotation.title = "Apple"
-        annotation.subtitle = "San Francisco, CA"
+        annotation.title = "Location to be saved"
         
+        //delete old annotations
+        let annotationsToRemove = mapView.annotations.filter { $0 !== mapView.userLocation }
+        mapView.removeAnnotations(annotationsToRemove)
+        
+        //add new one
         mapView.addAnnotation(annotation)
         mapView.setRegion(region, animated: true)
         
         addressLabel.text = "\(location!.coordinate.latitude) , \(location!.coordinate.longitude) "
         self.lastLocation = location
+        
         locationMgr.stopUpdatingLocation()
+        
+        CLGeocoder().reverseGeocodeLocation(location!, completionHandler: {
+            (placemarks, error) -> Void in
+            if placemarks!.count > 0{
+                let placemark = placemarks![0]
+                
+                var addressString : String = ""
+                if placemark.subThoroughfare != nil {
+                    addressString = placemark.subThoroughfare! + " "
+                }
+                if placemark.thoroughfare != nil {
+                    addressString = addressString + placemark.thoroughfare! + ", "
+                }
+                if placemark.postalCode != nil {
+                    addressString = addressString + placemark.postalCode! + " "
+                }
+                if placemark.locality != nil {
+                    addressString = addressString + placemark.locality! + ", "
+                }
+                if placemark.administrativeArea != nil {
+                    addressString = addressString + placemark.administrativeArea! + " "
+                }
+                if placemark.country != nil {
+                    addressString = addressString + placemark.country!
+                }
+                self.addressLabel.text = addressString
+            }
+        })
     }
 }

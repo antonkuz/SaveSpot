@@ -39,7 +39,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <state key="normal" title="LAST LOCATIONS">
+                                <state key="normal" title="LAST LOCATION">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="454.5" y="356.5"/>
         </scene>
-        <!--Last Location-->
+        <!--Show Location-->
         <scene sceneID="iUA-Bb-c6R">
             <objects>
-                <viewController title="Last Location" id="hP2-0N-ZE2" customClass="LastLocationVC" customModule="SaveSpot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Show Location" id="hP2-0N-ZE2" customClass="ShowLocationVC" customModule="SaveSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fad-KX-yJc"/>
                         <viewControllerLayoutGuide type="bottom" id="3b4-Yw-FWX"/>
@@ -106,7 +106,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="8i2-dh-79V">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="tA4-ud-dZf"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="tA4-ud-dZf">
+                            <connections>
+                                <action selector="closePressed:" destination="hP2-0N-ZE2" id="sCU-8f-9YE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -115,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6V-8l-mbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1698.5" y="394.5"/>
+            <point key="canvasLocation" x="2178.5" y="394.5"/>
         </scene>
         <!--Save Screen-->
         <scene sceneID="zew-O2-shg">
@@ -130,7 +134,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Whh-aD-8bb">
-                                <rect key="frame" x="0.0" y="601" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="613" width="375" height="54"/>
                                 <animations/>
                                 <state key="normal" title="Recalculate"/>
                                 <connections>
@@ -141,10 +145,10 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="491"/>
                                 <animations/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxc-VV-jbI">
-                                <rect key="frame" x="0.0" y="563" width="375" height="56"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1000 Ross Park Mall Dr, 15237 Ross" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxc-VV-jbI">
+                                <rect key="frame" x="20" y="553" width="335" height="61"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -172,27 +176,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHF-V1-SZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561.5" y="-330.5"/>
+            <point key="canvasLocation" x="1621.5" y="-426.5"/>
         </scene>
         <!--My Locations-->
         <scene sceneID="Vyi-9a-UCI">
             <objects>
-                <tableViewController title="My Locations" id="Fdz-Xb-byq" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yif-2F-z9v">
+                <tableViewController title="My Locations" id="Fdz-Xb-byq" customClass="HistoryTVController" customModule="SaveSpot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="28" sectionFooterHeight="28" id="Yif-2F-z9v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PBg-Td-ehr">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryTVCell" textLabel="g6q-dD-YmB" detailTextLabel="oCk-FK-seb" rowHeight="91" style="IBUITableViewCellStyleSubtitle" id="PBg-Td-ehr" customClass="HistoryTVCell" customModule="SaveSpot" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="91"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PBg-Td-ehr" id="DbQ-pT-0ev">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g6q-dD-YmB">
+                                            <rect key="frame" x="15" y="11" width="70.5" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oCk-FK-seb">
+                                            <rect key="frame" x="15" y="59" width="54" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="subtitleString" destination="oCk-FK-seb" id="MZS-aQ-yva"/>
+                                    <outlet property="titleString" destination="g6q-dD-YmB" id="L2Q-Is-qWR"/>
+                                    <segue destination="hP2-0N-ZE2" kind="show" identifier="ShowDetail" id="Lo1-ha-0t1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -200,7 +228,13 @@
                             <outlet property="delegate" destination="Fdz-Xb-byq" id="59X-mY-XhN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="lNq-5L-xhX"/>
+                    <navigationItem key="navigationItem" id="lNq-5L-xhX">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Igp-Qy-03f">
+                            <connections>
+                                <action selector="closePressed:" destination="Fdz-Xb-byq" id="XIx-uQ-LwV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T5x-4q-Q2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,4 +300,7 @@
             <point key="canvasLocation" x="1111.5" y="394.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Lo1-ha-0t1"/>
+    </inferredMetricsTieBreakers>
 </document>

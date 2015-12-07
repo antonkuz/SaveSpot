@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 var lastSpot : Spot?
+var spotList = [Spot]()
 
 class ViewController: UIViewController {
     

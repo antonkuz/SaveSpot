@@ -14,7 +14,9 @@
 		2E1966191C152B5200079E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E1966171C152B5200079E20 /* LaunchScreen.storyboard */; };
 		2E1966211C1538AA00079E20 /* SaveScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1966201C1538AA00079E20 /* SaveScreenVC.swift */; };
 		2E1966251C15642200079E20 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1966241C15642200079E20 /* Spot.swift */; };
-		2E1966271C15765C00079E20 /* LastLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1966261C15765C00079E20 /* LastLocationVC.swift */; };
+		2E1966271C15765C00079E20 /* ShowLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1966261C15765C00079E20 /* ShowLocationVC.swift */; };
+		2E1966291C15EA0800079E20 /* HistoryTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1966281C15EA0800079E20 /* HistoryTVController.swift */; };
+		2E19662B1C15ED5F00079E20 /* HistoryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19662A1C15ED5F00079E20 /* HistoryTVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,9 @@
 		2E19661A1C152B5200079E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E1966201C1538AA00079E20 /* SaveScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveScreenVC.swift; sourceTree = "<group>"; };
 		2E1966241C15642200079E20 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
-		2E1966261C15765C00079E20 /* LastLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastLocationVC.swift; sourceTree = "<group>"; };
+		2E1966261C15765C00079E20 /* ShowLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLocationVC.swift; sourceTree = "<group>"; };
+		2E1966281C15EA0800079E20 /* HistoryTVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTVController.swift; sourceTree = "<group>"; };
+		2E19662A1C15ED5F00079E20 /* HistoryTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,10 @@
 			children = (
 				2E19660E1C152B5200079E20 /* AppDelegate.swift */,
 				2E1966101C152B5200079E20 /* ViewController.swift */,
-				2E1966261C15765C00079E20 /* LastLocationVC.swift */,
+				2E1966261C15765C00079E20 /* ShowLocationVC.swift */,
 				2E1966121C152B5200079E20 /* Main.storyboard */,
+				2E1966281C15EA0800079E20 /* HistoryTVController.swift */,
+				2E19662A1C15ED5F00079E20 /* HistoryTVCell.swift */,
 				2E1966151C152B5200079E20 /* Assets.xcassets */,
 				2E1966171C152B5200079E20 /* LaunchScreen.storyboard */,
 				2E19661A1C152B5200079E20 /* Info.plist */,
@@ -148,7 +154,9 @@
 				2E19660F1C152B5200079E20 /* AppDelegate.swift in Sources */,
 				2E1966211C1538AA00079E20 /* SaveScreenVC.swift in Sources */,
 				2E1966251C15642200079E20 /* Spot.swift in Sources */,
-				2E1966271C15765C00079E20 /* LastLocationVC.swift in Sources */,
+				2E1966291C15EA0800079E20 /* HistoryTVController.swift in Sources */,
+				2E19662B1C15ED5F00079E20 /* HistoryTVCell.swift in Sources */,
+				2E1966271C15765C00079E20 /* ShowLocationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

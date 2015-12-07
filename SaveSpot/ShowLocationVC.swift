@@ -10,9 +10,17 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class LastLocationVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class ShowLocationVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    
+    // This value may be passed by `HistoryTVController` in `prepareForSegue(_:sender:)`
+    var historySpot: Spot?
+    
     let locationMgr = CLLocationManager()
     var myPosition = CLLocationCoordinate2D()
+    
+    @IBAction func closePressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -22,7 +30,6 @@ class LastLocationVC: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         locationMgr.delegate = self
         locationMgr.requestWhenInUseAuthorization()
         locationMgr.startUpdatingLocation()
-        print(lastSpot!.name)
         loadTheLocation()
     }
     
@@ -32,10 +39,14 @@ class LastLocationVC: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
     
     func loadTheLocation(){
-        let spot = lastSpot
+        var spot = lastSpot
+        if let oldSpot = historySpot {
+            //historyspot was passed
+            spot = oldSpot
+        }
         let location = spot!.location
         let center = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: center, span: span)
         let annotation = MKPointAnnotation()
         annotation.coordinate = center
