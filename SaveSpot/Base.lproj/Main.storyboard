@@ -100,6 +100,9 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7pS-KC-y2I">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="hP2-0N-ZE2" id="zPc-mK-Q3i"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <animations/>
@@ -141,10 +144,6 @@
                                     <action selector="recalculatePressed:" destination="d69-wz-zzE" eventType="touchUpInside" id="jom-c5-yua"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="txS-IW-ogY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="491"/>
-                                <animations/>
-                            </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1000 Ross Park Mall Dr, 15237 Ross" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxc-VV-jbI">
                                 <rect key="frame" x="20" y="553" width="335" height="61"/>
                                 <animations/>
@@ -152,6 +151,10 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="txS-IW-ogY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="491"/>
+                                <animations/>
+                            </mapView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
